@@ -1,40 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection.Emit;
-using AST;
 using AST.Nodes;
+using NUnit.Framework;
 
-namespace ManualTestApp
+namespace UnitTestAST
 {
-    internal class Program
+    [TestFixture]
+    public class NodesTests
     {
-        public static void Main(string[] args)
+        [Test]
+        public void AddTest()
         {
-            var addCode = new AddNode(new IntConstNode(2), new IntConstNode(5));
+            var addCode = new AddNode(new IntConstNode(2), new IntConstNode(2));
 
             Type[] methodArgs = {};
-
 
             var add = new DynamicMethod(
                 "Add",
                 typeof(int),
                 methodArgs,
-                typeof(Program).Module);
-
+                typeof(NodesTests).Module);
 
             var il = add.GetILGenerator();
+
             foreach (var operation in addCode.GetOperationsList())
                 operation.Emit(il);
 
             il.Emit(OpCodes.Ret);
 
-
             var addAction = (Func<int>) add.CreateDelegate(typeof(Func<int>));
 
-            Console.WriteLine(addAction());
-
-
-
+            Assert.AreEqual(4, addAction());
         }
     }
 }

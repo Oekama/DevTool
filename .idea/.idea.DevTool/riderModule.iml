@@ -5,12 +5,15 @@
       <sourceFolder url="file://$MODULE_DIR$/../../AST" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../CommonCode" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../ManualTestApp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../UnitTestAST" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../AST/bin" />
       <excludeFolder url="file://$MODULE_DIR$/../../AST/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../CommonCode/bin" />
       <excludeFolder url="file://$MODULE_DIR$/../../CommonCode/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../ManualTestApp/bin" />
       <excludeFolder url="file://$MODULE_DIR$/../../ManualTestApp/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/../../UnitTestAST/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../UnitTestAST/obj" />
       <excludeFolder url="file://$MODULE_DIR$/../../packages" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
