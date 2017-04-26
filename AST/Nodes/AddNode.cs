@@ -4,70 +4,27 @@ using AST.Operations;
 
 namespace AST.Nodes
 {
-    public class AddNode : IASTNodeInternal
+    public sealed class AddNode : BinaryOperationNodeBase
     {
-        private IASTNode _leftOperand;
-        private IASTNode _rightOperand;
-        private IASTNode _parent;
-        private List<Operation> _operationListCache;
-
-        public IASTNode LeftOperand
+        public AddNode(NodeBase leftOperand, NodeBase rightOperand)
         {
-            get => _leftOperand;
-            set
-            {
-                _leftOperand = value;
-                ((IASTNodeInternal)value).SetParent(this);
-            }
-        }
-
-        public IASTNode RightOperand
-        {
-            get => _rightOperand;
-            set
-            {
-                _rightOperand = value;
-                ((IASTNodeInternal)value).SetParent(this);
-            }
-        }
-
-        public AddNode(IASTNode leftOperand, IASTNode rightOperand)
-        {
-            LeftOperand = leftOperand;
             RightOperand = rightOperand;
+            LeftOperand = leftOperand;
+            Update();
+        }
 
+        protected override void Update()
+        {
             var oplist = new List<Operation>();
-            oplist.AddRange(LeftOperand.GetOperationsList());
-            oplist.AddRange(RightOperand.GetOperationsList());
+            oplist.AddRange(LeftOperand.OperationsList);
+            oplist.AddRange(RightOperand.OperationsList);
 
             oplist.Add(new Operation(OpCodes.Add));
 
-            _operationListCache = oplist;
+            OperationsList = oplist;
+
+            UpdateParentOf(this);
         }
 
-        public IASTNode Parent => _parent;
-
-        public List<Operation> GetOperationsList()
-        {
-            return _operationListCache;
-        }
-
-        public void Update()
-        {
-            var oplist = new List<Operation>();
-            oplist.AddRange(LeftOperand.GetOperationsList());
-            oplist.AddRange(RightOperand.GetOperationsList());
-
-            oplist.Add(new Operation(OpCodes.Add));
-
-            _operationListCache = oplist;
-
-            ((IASTNodeInternal)Parent)?.Update();
-        }
-
-        public void SetParent(IASTNode parent)
-        {
-            _parent = parent;
-        }
     }
 }

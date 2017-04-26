@@ -40,20 +40,24 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Nodes\BinaryOperationNodeBase.cs"/>
+        <Compile Include="Nodes\NodeBase.cs"/>
         <Compile Include="Nodes\AddNode.cs"/>
-        <Compile Include="Nodes\IASTNode.cs"/>
         <Compile Include="Nodes\IntConstNode.cs"/>
         <Compile Include="Nodes\MultiplicationNode.cs"/>
         <Compile Include="Operations\LoadIntConstOperation.cs"/>
         <Compile Include="Operations\Operation.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
+    <ItemGroup>
+        <None Include="Nodes\NodesClassDiagram.cd"/>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-               Other similar extension points exist, see Microsoft.Common.targets.
-          <Target Name="BeforeBuild">
-          </Target>
-          <Target Name="AfterBuild">
-          </Target>
-          -->
+                 Other similar extension points exist, see Microsoft.Common.targets.
+            <Target Name="BeforeBuild">
+            </Target>
+            <Target Name="AfterBuild">
+            </Target>
+            -->
 </Project>

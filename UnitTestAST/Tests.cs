@@ -23,7 +23,7 @@ namespace UnitTestAST
 
             var il = add.GetILGenerator();
 
-            foreach (var operation in addCode.GetOperationsList())
+            foreach (var operation in addCode.OperationsList)
                 operation.Emit(il);
 
             il.Emit(OpCodes.Ret);
@@ -49,7 +49,7 @@ namespace UnitTestAST
 
             var il = mul.GetILGenerator();
 
-            foreach (var operation in mulCode.GetOperationsList())
+            foreach (var operation in mulCode.OperationsList)
                 operation.Emit(il);
 
             il.Emit(OpCodes.Ret);
@@ -75,7 +75,7 @@ namespace UnitTestAST
 
             var il = met.GetILGenerator();
 
-            foreach (var operation in code.GetOperationsList())
+            foreach (var operation in code.OperationsList)
                 operation.Emit(il);
 
             il.Emit(OpCodes.Ret);
@@ -101,7 +101,7 @@ namespace UnitTestAST
 
             var il = met.GetILGenerator();
 
-            foreach (var operation in code.GetOperationsList())
+            foreach (var operation in code.OperationsList)
                 operation.Emit(il);
 
             il.Emit(OpCodes.Ret);

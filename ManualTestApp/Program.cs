@@ -23,7 +23,7 @@ namespace ManualTestApp
 
 
             var il = add.GetILGenerator();
-            foreach (var operation in addCode.GetOperationsList())
+            foreach (var operation in addCode.OperationsList)
                 operation.Emit(il);
 
             il.Emit(OpCodes.Ret);

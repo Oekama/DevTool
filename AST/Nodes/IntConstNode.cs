@@ -3,51 +3,34 @@ using AST.Operations;
 
 namespace AST.Nodes
 {
-    public class IntConstNode : IASTNodeInternal
+    public sealed class IntConstNode : NodeBase
     {
         private int _value;
 
         public int Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
                 _value = value;
-                ((IASTNodeInternal) this).Update();
+                Update();
             }
         }
-
-        private List<Operation> _operationListCache;
-        private IASTNode _parent;
-
 
         public IntConstNode(int value)
         {
             Value = value;
-            _operationListCache = new List<Operation>
-            {
-                new LoadIntConstOperation(Value)
-            };
+            Update();
         }
 
-        public IASTNode Parent => _parent;
-
-        public List<Operation> GetOperationsList() => _operationListCache;
-
-        void IASTNodeInternal.Update()
+        protected override void Update()
         {
-
-            _operationListCache = new List<Operation>
+            OperationsList = new List<Operation>
             {
                 new LoadIntConstOperation(Value)
             };
 
-            ((IASTNodeInternal)Parent)?.Update();
-        }
-
-        public void SetParent(IASTNode parent)
-        {
-            _parent = parent;
+            UpdateParentOf(this);
         }
     }
 }
