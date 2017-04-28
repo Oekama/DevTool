@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AST.Nodes.AddNode">
+    <Position X="0.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\AddNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AST.Nodes.MultiplicationNode">
+    <Position X="3.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\MultiplicationNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AST.Nodes.IntConstNode">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Nodes\IntConstNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AST.BinaryOperationNodeBase">
+    <Position X="1.75" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAgAIAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\BinaryOperationNodeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AST.Nodes.NodeBase">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAQAAAAAAAIQAAAUAAAAAAAAA=</HashCode>
+      <FileName>Nodes\NodeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AST.AdultNode">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAACAIAAAAAAAIAAAAQAAAAAAAAAEA=</HashCode>
+      <FileName>Nodes\AdultNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

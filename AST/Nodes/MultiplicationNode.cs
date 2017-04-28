@@ -4,13 +4,12 @@ using AST.Operations;
 
 namespace AST.Nodes
 {
-    public sealed class MultiplicationNode : BinaryOperationNodeBase
+    public sealed class MultiplicationNode : AdultNode
     {
 
         public MultiplicationNode(NodeBase leftOperand, NodeBase rightOperand)
         {
-            RightOperand = rightOperand;
-            LeftOperand = leftOperand;
+            Children = new[] {leftOperand, rightOperand};
             Update();
         }
 
@@ -18,14 +17,14 @@ namespace AST.Nodes
         {
 
             var oplist = new List<Operation>();
-            oplist.AddRange(LeftOperand.OperationsList);
-            oplist.AddRange(RightOperand.OperationsList);
+            oplist.AddRange(Children[0].OperationsList);
+            oplist.AddRange(Children[1].OperationsList);
 
             oplist.Add(new Operation(OpCodes.Mul));
 
             OperationsList = oplist;
 
-           // ((NodeBaseInternal)Parent)?.Update();
+            UpdateParentOf(this);
         }
 
     }

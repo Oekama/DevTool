@@ -4,20 +4,19 @@ using AST.Operations;
 
 namespace AST.Nodes
 {
-    public sealed class AddNode : BinaryOperationNodeBase
+    public sealed class AddNode : AdultNode
     {
         public AddNode(NodeBase leftOperand, NodeBase rightOperand)
         {
-            RightOperand = rightOperand;
-            LeftOperand = leftOperand;
+            Children = new[] {leftOperand, rightOperand};
             Update();
         }
 
         protected override void Update()
         {
             var oplist = new List<Operation>();
-            oplist.AddRange(LeftOperand.OperationsList);
-            oplist.AddRange(RightOperand.OperationsList);
+            oplist.AddRange(Children[0].OperationsList);
+            oplist.AddRange(Children[1].OperationsList);
 
             oplist.Add(new Operation(OpCodes.Add));
 

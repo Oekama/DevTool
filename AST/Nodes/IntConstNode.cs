@@ -19,8 +19,9 @@ namespace AST.Nodes
 
         public IntConstNode(int value)
         {
+
+            // updates automaticly
             Value = value;
-            Update();
         }
 
         protected override void Update()
