@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 using AST.Nodes;
 using NUnit.Framework;
 
-namespace UnitTestAST
+namespace UnitTestAST.Nodes
 {
     [TestFixture]
     public class NodesTests

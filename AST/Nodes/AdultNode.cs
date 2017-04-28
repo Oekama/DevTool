@@ -1,10 +1,6 @@
-﻿using AST.Nodes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 
-namespace AST
+namespace AST.Nodes
 {
     public abstract class AdultNode : NodeBase
     {

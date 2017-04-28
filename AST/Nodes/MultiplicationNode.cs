@@ -10,6 +10,9 @@ namespace AST.Nodes
         public MultiplicationNode(NodeBase leftOperand, NodeBase rightOperand)
         {
             Children = new[] {leftOperand, rightOperand};
+            SetParent(leftOperand,this);
+            SetParent(rightOperand,this);
+
             Update();
         }
 

@@ -15,7 +15,7 @@ namespace AST.Nodes
 
         protected static void UpdateParentOf(NodeBase node) => node.Parent?.Update();
 
-        public  NodeBase GetNodeOfPrevusOperation()
+        public NodeBase GetNodeOfPrevusOperation()
         {
             var node = this;
 
