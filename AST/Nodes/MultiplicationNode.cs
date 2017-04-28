@@ -12,7 +12,7 @@ namespace AST.Nodes
             Children = new[] {leftOperand, rightOperand};
             SetParent(leftOperand,this);
             SetParent(rightOperand,this);
-
+            
             Update();
         }
 
