@@ -17,7 +17,7 @@ namespace AST.Operations
 
         public OpCode OpCode { get; protected set; }
 
-        public void Emit(ILGenerator generator)
+        public virtual void Emit(ILGenerator generator)
         {
             generator.Emit(OpCode);
         }

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using AST;
-using AST.Nodes;
+using AST.Nodes.CodeNodes;
+using AST.Nodes.StructureNodes;
 
 namespace ManualTestApp
 {
@@ -10,31 +11,18 @@ namespace ManualTestApp
     {
         public static void Main(string[] args)
         {
-            var addCode = new AddNode(new IntConstNode(2), new IntConstNode(5));
+            var code = new FunNode(
+                new TypeNode(typeof(int)),
+                new NameNode("add"),
+                new ReurnNode(
+                    new AddNode(
+                        new IntConstNode(100),
+                        new IntConstNode(3))));
 
-            Type[] methodArgs = {};
+            var act = (Func<int>)code.Method.CreateDelegate(typeof(Func<int>));
 
-
-            var add = new DynamicMethod(
-                "Add",
-                typeof(int),
-                methodArgs,
-                typeof(Program).Module);
-
-
-            var il = add.GetILGenerator();
-            foreach (var operation in addCode.OperationsList)
-                operation.Emit(il);
-
-            il.Emit(OpCodes.Ret);
-
-
-            var addAction = (Func<int>) add.CreateDelegate(typeof(Func<int>));
-
-            Console.WriteLine(addAction());
-
-
-
+            Console.WriteLine(act());
+            Console.ReadLine();
         }
     }
 }

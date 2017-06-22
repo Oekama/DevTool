@@ -1,0 +1,9 @@
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\bin\Debug\UnitTestAST.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\bin\Debug\UnitTestAST.pdb
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\bin\Debug\AST.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\bin\Debug\nunit.framework.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\bin\Debug\AST.pdb
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\bin\Debug\nunit.framework.xml
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\obj\Debug\UnitTestAST.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\obj\Debug\UnitTestAST.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\UnitTestAST\obj\Debug\UnitTestAST.pdb

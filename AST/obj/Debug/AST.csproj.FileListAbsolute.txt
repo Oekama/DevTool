@@ -1,0 +1,5 @@
+C:\Users\Windows 10 x64\RiderProjects\DevTool\AST\bin\Debug\AST.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\AST\bin\Debug\AST.pdb
+C:\Users\Windows 10 x64\RiderProjects\DevTool\AST\obj\Debug\AST.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\AST\obj\Debug\AST.pdb
+C:\Users\Windows 10 x64\RiderProjects\DevTool\AST\obj\Debug\AST.csprojResolveAssemblyReference.cache

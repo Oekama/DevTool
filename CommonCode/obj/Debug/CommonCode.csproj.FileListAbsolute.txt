@@ -1,0 +1,4 @@
+C:\Users\Windows 10 x64\RiderProjects\DevTool\CommonCode\bin\Debug\CommonCode.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\CommonCode\bin\Debug\CommonCode.pdb
+C:\Users\Windows 10 x64\RiderProjects\DevTool\CommonCode\obj\Debug\CommonCode.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\CommonCode\obj\Debug\CommonCode.pdb

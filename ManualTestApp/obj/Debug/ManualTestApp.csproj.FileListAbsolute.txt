@@ -1,0 +1,7 @@
+C:\Users\Windows 10 x64\RiderProjects\DevTool\ManualTestApp\bin\Debug\ManualTestApp.exe
+C:\Users\Windows 10 x64\RiderProjects\DevTool\ManualTestApp\bin\Debug\ManualTestApp.pdb
+C:\Users\Windows 10 x64\RiderProjects\DevTool\ManualTestApp\bin\Debug\AST.dll
+C:\Users\Windows 10 x64\RiderProjects\DevTool\ManualTestApp\bin\Debug\AST.pdb
+C:\Users\Windows 10 x64\RiderProjects\DevTool\ManualTestApp\obj\Debug\ManualTestApp.csprojResolveAssemblyReference.cache
+C:\Users\Windows 10 x64\RiderProjects\DevTool\ManualTestApp\obj\Debug\ManualTestApp.exe
+C:\Users\Windows 10 x64\RiderProjects\DevTool\ManualTestApp\obj\Debug\ManualTestApp.pdb

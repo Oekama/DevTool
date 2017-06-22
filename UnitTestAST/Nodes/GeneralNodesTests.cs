@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection.Emit;
-using AST.Nodes;
+using AST.Nodes.AbstractNodes;
+using AST.Nodes.CodeNodes;
 using NUnit.Framework;
 
 namespace UnitTestAST.Nodes
@@ -8,111 +9,72 @@ namespace UnitTestAST.Nodes
     [TestFixture]
     public class NodesTests
     {
-        [Test]
-        public void AddTest()
+
+        private void TestBaseExicuteCodeIntReturn(BaseNode code, int expected)
         {
-            var addCode = new AddNode(new IntConstNode(2), new IntConstNode(2));
+            Type[] args = {};
 
-            Type[] methodArgs = {};
-
-            var add = new DynamicMethod(
-                "Add",
+            var dm = new DynamicMethod(
+                "Test",
                 typeof(int),
-                methodArgs,
+                args,
                 typeof(NodesTests).Module);
 
-            var il = add.GetILGenerator();
+            var il = dm.GetILGenerator();
 
-            foreach (var operation in addCode.OperationsList)
-                operation.Emit(il);
+            foreach (var op in (code as ICodeNode).OperationsСache)
+                op.Emit(il);
 
             il.Emit(OpCodes.Ret);
 
-            var addAction = (Func<int>) add.CreateDelegate(typeof(Func<int>));
+            var act = (Func<int>) dm.CreateDelegate(typeof(Func<int>));
 
-            Assert.AreEqual(4, addAction());
+            Assert.AreEqual(expected, act());
+        }
+        
+        
+        [Test]
+        public void AddTest()
+        {
+            var addCode = new AddNode(
+                new IntConstNode(1000), 
+                new IntConstNode(2));
 
+            TestBaseExicuteCodeIntReturn(addCode, 1002);
         }
 
         [Test]
         public void MultiplicationTest()
         {
-            var mulCode = new MultiplicationNode(new IntConstNode(2), new IntConstNode(2));
+            var mulCode = new MultiplicationNode(
+                new IntConstNode(5), 
+                new IntConstNode(2));
 
-            Type[] methodArgs = {};
-
-            var mul = new DynamicMethod(
-                "Multiplication",
-                typeof(int),
-                methodArgs,
-                typeof(NodesTests).Module);
-
-            var il = mul.GetILGenerator();
-
-            foreach (var operation in mulCode.OperationsList)
-                operation.Emit(il);
-
-            il.Emit(OpCodes.Ret);
-
-            var mulAction = (Func<int>) mul.CreateDelegate(typeof(Func<int>));
-
-            Assert.AreEqual(4, mulAction());
-
+            TestBaseExicuteCodeIntReturn(mulCode, 10);
         }
 
         [Test]
         public void AddMultiplicationTest()
         {
-            var code = new MultiplicationNode(new AddNode(new IntConstNode(2),new IntConstNode(2) ), new IntConstNode(2));
+            var code = new MultiplicationNode(
+                new AddNode(
+                    new IntConstNode(2),
+                    new IntConstNode(2)), 
+                new IntConstNode(2));
 
-            Type[] methodArgs = {};
-
-            var met = new DynamicMethod(
-                "Multiplication",
-                typeof(int),
-                methodArgs,
-                typeof(NodesTests).Module);
-
-            var il = met.GetILGenerator();
-
-            foreach (var operation in code.OperationsList)
-                operation.Emit(il);
-
-            il.Emit(OpCodes.Ret);
-
-            var act = (Func<int>) met.CreateDelegate(typeof(Func<int>));
-
-            Assert.AreEqual(8, act());
-
+            TestBaseExicuteCodeIntReturn(code, 8);
         }
 
         [Test]
         public void MultiplicationAddTest()
         {
-            var code = new AddNode(new MultiplicationNode(new IntConstNode(2),new IntConstNode(2) ), new IntConstNode(2));
+            var code = new AddNode(
+                new MultiplicationNode(
+                    new IntConstNode(2),
+                    new IntConstNode(2)), 
+                new IntConstNode(2));
 
-            Type[] methodArgs = {};
-
-            var met = new DynamicMethod(
-                "Multiplication",
-                typeof(int),
-                methodArgs,
-                typeof(NodesTests).Module);
-
-            var il = met.GetILGenerator();
-
-            foreach (var operation in code.OperationsList)
-                operation.Emit(il);
-
-            il.Emit(OpCodes.Ret);
-
-            var act = (Func<int>) met.CreateDelegate(typeof(Func<int>));
-
-            Assert.AreEqual(6, act());
-
+            TestBaseExicuteCodeIntReturn(code, 6);
         }
-
-
-
     }
 }

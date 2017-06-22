@@ -48,9 +48,27 @@ namespace AST.Operations
             }
         }
 
-        public new void Emit(ILGenerator generator)
+        public override void Emit(ILGenerator generator)
         {
-            generator.Emit(OpCode, Value);
+            switch (Value)
+            {
+                case -1:
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                    generator.Emit(OpCode);
+                    break;
+                //ToDo add short
+                default:
+                    generator.Emit(OpCode, Value);
+                    break;
+            }
         }
 
     }
