@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using AST.AbstractNodes;
 using AST.Operations;
 
-namespace AST.Nodes
+namespace AST.CodeNodes
 {
-    public sealed class IntConstNode : NodeBase
+    public sealed class IntConstBaseNode : BaseNode , ICode
     {
         private int _value;
 
@@ -17,10 +18,12 @@ namespace AST.Nodes
             }
         }
 
-        public IntConstNode(int value)
+        public IntConstBaseNode(int value)
         {
 
-            // updates automaticly
+            // todo  updates automaticly --- ? 
+            // then we create object parent is not set 
+            // is this realy nesesry ?
             Value = value;
         }
 
@@ -33,5 +36,7 @@ namespace AST.Nodes
 
             UpdateParentOf(this);
         }
+
+        public List<Operation> OperationsList { get; private set; }
     }
 }

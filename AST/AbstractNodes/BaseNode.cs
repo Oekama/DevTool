@@ -9,12 +9,13 @@ namespace AST.Nodes
 
         protected static void SetParent(NodeBase node, AdultNode parent) => node.Parent = parent;
 
-        public List<Operation> OperationsList { get; protected set; }
+   
 
         protected abstract void Update();
 
         protected static void UpdateParentOf(NodeBase node) => node.Parent?.Update();
 
+/*
         public NodeBase GetNodeOfPrevusOperation()
         {
             var node = this;
@@ -35,6 +36,7 @@ namespace AST.Nodes
             return node;
 
         }
+*/
 
 
     }
