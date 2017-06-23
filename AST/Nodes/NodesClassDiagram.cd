@@ -1,85 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="AST.AbstractNodes.AdultBaseNode" Collapsed="true">
-    <Position X="10" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Nodes\AbstractNodes\AdultBaseNode.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AST.AbstractNodes.BaseNode" Collapsed="true">
-    <Position X="13.25" Y="2.25" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="AST.Nodes.AbstractNodes.BaseNode">
+    <Position X="9.5" Y="0.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAEAAAAAAAAA=</HashCode>
       <FileName>Nodes\AbstractNodes\BaseNode.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AST.CodeNodes.AddNode" Collapsed="true">
-    <Position X="12.25" Y="5" Width="1.5" />
+  <Class Name="AST.Nodes.AbstractNodes.BinaryOperationNode">
+    <Position X="10.5" Y="3.25" Width="4.75" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Nodes\CodeNodes\AddNode.cs</FileName>
+      <HashCode>AAQAAAAEAAAAAAAAAAIAAAAAAAgAIAgAAAAACAAIAAA=</HashCode>
+      <FileName>Nodes\AbstractNodes\BinaryOperationNode.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AST.CodeNodes.CodeBlockNode" Collapsed="true">
-    <Position X="5.5" Y="5" Width="1.5" />
+  <Class Name="AST.Nodes.CodeNodes.AddNode">
+    <Position X="15.5" Y="7" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Nodes\CodeNodes\AddNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AST.Nodes.CodeNodes.CodeBlockNode">
+    <Position X="19" Y="3.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Nodes\CodeNodes\CodeBlockNode.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AST.CodeNodes.IntConstNode" Collapsed="true">
-    <Position X="16.75" Y="3.5" Width="1.5" />
+  <Class Name="AST.Nodes.CodeNodes.IntConstNode">
+    <Position X="22.5" Y="3.25" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAA=</HashCode>
       <FileName>Nodes\CodeNodes\IntConstNode.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AST.CodeNodes.MultiplicationNode" Collapsed="true">
-    <Position X="10" Y="5" Width="1.5" />
+  <Class Name="AST.Nodes.CodeNodes.MultiplicationNode">
+    <Position X="10.5" Y="7" Width="4.75" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
       <FileName>Nodes\CodeNodes\MultiplicationNode.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AST.CodeNodes.ReurnNode" Collapsed="true">
-    <Position X="14.5" Y="5" Width="1.5" />
+  <Class Name="AST.Nodes.CodeNodes.ReurnNode">
+    <Position X="15.5" Y="3.25" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAIAAAAAAAAIAAAAAAAACAEAAAA=</HashCode>
       <FileName>Nodes\CodeNodes\ReurnNode.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AST.StructureNodes.FunNode" Collapsed="true">
-    <Position X="7.75" Y="5" Width="1.5" />
+  <Class Name="AST.Nodes.StructureNodes.FunNode">
+    <Position X="5" Y="3.25" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAIAAAAAAAAAAAAAIgAAQAAgAAAAAAAAAAAAAkAAA=</HashCode>
       <FileName>Nodes\StructureNodes\FunNode.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AST.StructureNodes.NameNode" Collapsed="true">
-    <Position X="19" Y="3.5" Width="1.5" />
+  <Class Name="AST.Nodes.StructureNodes.NameNode">
+    <Position X="0.5" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Nodes\StructureNodes\NameNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AST.StructureNodes.TypeNode" Collapsed="true">
-    <Position X="21.25" Y="3.5" Width="1.5" />
+  <Class Name="AST.Nodes.StructureNodes.TypeNode">
+    <Position X="2.75" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Nodes\StructureNodes\TypeNode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="AST.AbstractNodes.ICode" Collapsed="true">
-    <Position X="6.75" Y="1.75" Width="1.5" />
+  <Interface Name="AST.Nodes.AbstractNodes.IAdultNode">
+    <Position X="4.25" Y="7.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Nodes\AbstractNodes\ICode.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\AbstractNodes\IAdultNode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AST.Nodes.AbstractNodes.ICodeNode">
+    <Position X="0.5" Y="7.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Nodes\AbstractNodes\ICodeNode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AST.Nodes.AbstractNodes.INode">
+    <Position X="2.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nodes\AbstractNodes\INode.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

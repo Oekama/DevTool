@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nodes\AbstractNodes\AdultNode.cs" />
     <Compile Include="Nodes\AbstractNodes\BinaryOperationNode.cs" />
     <Compile Include="Nodes\AbstractNodes\IAdultNode.cs" />
     <Compile Include="Nodes\AbstractNodes\BaseNode.cs" />

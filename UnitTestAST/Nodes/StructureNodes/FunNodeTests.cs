@@ -2,10 +2,6 @@
 using AST.Nodes.StructureNodes;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitTestAST.Nodes.StructureNodes
 {
@@ -27,8 +23,5 @@ namespace UnitTestAST.Nodes.StructureNodes
 
             Assert.AreEqual(103, act());
         }
-
-
-
     }
 }
