@@ -10,7 +10,7 @@ namespace UnitTestAST.Nodes
     public class BinaryOperationNodeTests
     {
 
-        private void TestBaseExicuteCodeIntReturn(BaseNode code, int expected)
+        private void TestBaseExecuteCodeIntReturn(BaseNode code, int expected)
         {
             Type[] args = {};
 
@@ -40,7 +40,7 @@ namespace UnitTestAST.Nodes
                 new IntConstNode(1000), 
                 new IntConstNode(2));
 
-            TestBaseExicuteCodeIntReturn(addCode, 1002);
+            TestBaseExecuteCodeIntReturn(addCode, 1002);
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace UnitTestAST.Nodes
                 new IntConstNode(5), 
                 new IntConstNode(2));
 
-            TestBaseExicuteCodeIntReturn(mulCode, 10);
+            TestBaseExecuteCodeIntReturn(mulCode, 10);
         }
 
         [Test]
@@ -62,7 +62,7 @@ namespace UnitTestAST.Nodes
                     new IntConstNode(2)), 
                 new IntConstNode(2));
 
-            TestBaseExicuteCodeIntReturn(code, 8);
+            TestBaseExecuteCodeIntReturn(code, 8);
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace UnitTestAST.Nodes
                     new IntConstNode(2)), 
                 new IntConstNode(2));
 
-            TestBaseExicuteCodeIntReturn(code, 6);
+            TestBaseExecuteCodeIntReturn(code, 6);
         }
     }
 }

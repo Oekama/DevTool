@@ -48,7 +48,7 @@
     <Compile Include="Nodes\CodeNodes\CodeBlockNode.cs" />
     <Compile Include="Nodes\CodeNodes\IntConstNode.cs" />
     <Compile Include="Nodes\CodeNodes\MultiplicationNode.cs" />
-    <Compile Include="Nodes\CodeNodes\ReurnNode.cs" />
+    <Compile Include="Nodes\CodeNodes\ReturnNode.cs" />
     <Compile Include="Operations\LoadIntConstOperation.cs" />
     <Compile Include="Operations\Operation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,7 +14,7 @@ namespace UnitTestAST.Nodes.StructureNodes
            var code = new FunNode(
            new TypeNode(typeof(int)),
            new NameNode("add"),
-           new ReurnNode(
+           new ReturnNode(
                new AddNode(
                    new IntConstNode(100),
                    new IntConstNode(3))));
