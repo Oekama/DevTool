@@ -4,8 +4,56 @@ using AST.Nodes.AbstractNodes;
 
 namespace AST.Nodes.StructureNodes
 {
-    public sealed class FunNode : AdultNode
+    public sealed class FunNode : BaseNode, IAdultNode
     {
+
+        private ICodeNode _code;
+
+        public ICodeNode Code
+        {
+            get
+            {
+                return _code;
+            }
+            set
+            {
+                _code = value;
+                SetParent(_code, this);
+                Update();
+            }
+        }
+
+        private TypeNode _returnType;
+
+        public TypeNode ReturnType
+        {
+            get
+            {
+                return _returnType;
+            }
+            set
+            {
+                _returnType = value;
+                SetParent(_returnType, this);
+                Update();
+            }
+        }
+
+        private NameNode _name;
+
+        public NameNode Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+                SetParent(_name, this);
+                Update();
+            }
+        }
 
         public DynamicMethod Method { get; private set; }
 
@@ -13,11 +61,13 @@ namespace AST.Nodes.StructureNodes
         // todo args
         public FunNode(TypeNode returnType, NameNode name, ICodeNode code)
         {
-            Children = new[] { returnType, name, (BaseNode)code };
+            _returnType = returnType;
+            _name = name;
+            _code = code;
 
             SetParent(returnType, this);
             SetParent(name, this);
-            SetParent((BaseNode)code, this);
+            SetParent(code, this);
             
             Update();
 
@@ -29,18 +79,33 @@ namespace AST.Nodes.StructureNodes
             Type[] methodArgs = { };
 
             var dm = new DynamicMethod(
-                    ((NameNode)(Children[1])).Value,
-                    ((TypeNode)Children[0]).Value,
+                    Name.Value,
+                    ReturnType.Value,
                     methodArgs,
                     typeof(FunNode).Module // todo !!!
                     );
             
             var il = dm.GetILGenerator();
 
-            foreach (var operation in ((ICodeNode)Children[2]).OperationsСache)
+            foreach (var operation in Code.OperationsСache)
                 operation.Emit(il);
 
             Method = dm;
+        }
+
+        public INode GetChild(int childId)
+        {
+            switch (childId)
+            {
+                case 0:
+                    return ReturnType;
+                case 1:
+                    return Name;
+                case 2:
+                    return Code;
+                default:
+                    throw new IndexOutOfRangeException();
+            }
         }
     }
 }

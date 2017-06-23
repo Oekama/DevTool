@@ -2,8 +2,8 @@
 
 namespace AST.Nodes.AbstractNodes
 {
-    public interface IAdultNode
+    public interface IAdultNode : INode
     {
-        List<BaseNode> GetChildren();
+        INode GetChild(int childId);
     }
 }

@@ -42,8 +42,9 @@
     <Compile Include="Nodes\AbstractNodes\AdultNode.cs" />
     <Compile Include="Nodes\AbstractNodes\BinaryOperationNode.cs" />
     <Compile Include="Nodes\AbstractNodes\IAdultNode.cs" />
-    <Compile Include="Nodes\AbstractNodes\ICode.cs" />
     <Compile Include="Nodes\AbstractNodes\BaseNode.cs" />
+    <Compile Include="Nodes\AbstractNodes\ICodeNode.cs" />
+    <Compile Include="Nodes\AbstractNodes\INode.cs" />
     <Compile Include="Nodes\CodeNodes\AddNode.cs" />
     <Compile Include="Nodes\CodeNodes\CodeBlockNode.cs" />
     <Compile Include="Nodes\CodeNodes\IntConstNode.cs" />

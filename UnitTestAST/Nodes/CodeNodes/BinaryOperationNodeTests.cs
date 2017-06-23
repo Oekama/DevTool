@@ -7,7 +7,7 @@ using NUnit.Framework;
 namespace UnitTestAST.Nodes
 {
     [TestFixture]
-    public class NodesTests
+    public class BinaryOperationNodeTests
     {
 
         private void TestBaseExicuteCodeIntReturn(BaseNode code, int expected)
@@ -18,7 +18,7 @@ namespace UnitTestAST.Nodes
                 "Test",
                 typeof(int),
                 args,
-                typeof(NodesTests).Module);
+                typeof(BinaryOperationNodeTests).Module);
 
             var il = dm.GetILGenerator();
 

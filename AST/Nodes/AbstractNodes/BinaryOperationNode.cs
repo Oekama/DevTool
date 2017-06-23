@@ -4,15 +4,48 @@ using AST.Operations;
 
 namespace AST.Nodes.AbstractNodes
 {
-    public abstract class BinaryOperationNode : AdultNode, ICodeNode
+    public abstract class BinaryOperationNode : BaseNode, ICodeNode, IAdultNode
     {
-        
-        public BinaryOperationNode(BaseNode leftOperand, BaseNode rightOperand)
+
+        ICodeNode _leftOperand;
+        ICodeNode _rightOperand;
+
+        public ICodeNode LeftOperand
         {
-            Children = new[] {leftOperand, rightOperand};
-            SetParent(leftOperand,this);
-            SetParent(rightOperand,this);
-            
+            get
+            {
+                return _leftOperand;
+            }
+            set
+            {
+                _leftOperand = value;
+                SetParent(_leftOperand, this);
+                Update();
+            }
+        }
+
+        public ICodeNode RightOperand
+        {
+            get
+            {
+                return _rightOperand;
+            }
+            set
+            {
+                _rightOperand = value;
+                SetParent(_rightOperand, this);
+                Update();
+            }
+        }
+
+        public BinaryOperationNode(ICodeNode leftOperand, ICodeNode rightOperand)
+        {
+            _leftOperand = leftOperand;
+            _rightOperand = rightOperand;
+
+            SetParent(leftOperand, this);
+            SetParent(rightOperand, this);
+
             Update();
         }
 
@@ -20,11 +53,10 @@ namespace AST.Nodes.AbstractNodes
         {
 
             var oplist = new List<Operation>();
-            oplist.AddRange(((ICodeNode)Children[0]).OperationsСache);
-            oplist.AddRange(((ICodeNode)Children[1]).OperationsСache);
+            oplist.AddRange(LeftOperand.OperationsСache);
+            oplist.AddRange(RightOperand.OperationsСache);
 
             PushOperations(oplist);
-            //oplist.Add(new Operation(OpCodes.Mul));
 
             OperationsСache = oplist;
 
@@ -32,8 +64,18 @@ namespace AST.Nodes.AbstractNodes
         }
 
         protected abstract void PushOperations(List<Operation> opList);
-        
+
+        public INode GetChild(int childId)
+        {
+            if (childId == 0)
+                return LeftOperand;
+            else if (childId == 1)
+                return RightOperand;
+            else
+                throw new IndexOutOfRangeException();
+        }
+
         public List<Operation> OperationsСache { get; private set; }
-        
+
     }
 }

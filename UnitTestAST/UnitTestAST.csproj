@@ -42,8 +42,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Nodes\GeneralNodesTests.cs" />
-    <Compile Include="Nodes\NodeBaseTests.cs" />
+    <Compile Include="Nodes\CodeNodes\BinaryOperationNodeTests.cs" />
+    <Compile Include="Nodes\StructureNodes\FunNodeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

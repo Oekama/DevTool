@@ -9,7 +9,7 @@ namespace AST.Nodes.CodeNodes
     public sealed class AddNode : BinaryOperationNode
     {
 
-        public AddNode(BaseNode leftOperand, BaseNode rightOperand) : base(leftOperand, rightOperand)
+        public AddNode(ICodeNode leftOperand, ICodeNode rightOperand) : base(leftOperand, rightOperand)
         {
         }
 

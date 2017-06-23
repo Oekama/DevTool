@@ -1,31 +1,56 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection.Emit;
 using AST.Nodes.AbstractNodes;
 using AST.Operations;
 
 namespace AST.Nodes.CodeNodes
 {
-    public sealed class ReurnNode : AdultNode ,ICodeNode
+    public sealed class ReurnNode : BaseNode ,ICodeNode, IAdultNode
     {
-        public ReurnNode(BaseNode operrand)
-        {
-            Children = new[] {operrand};
+        private ICodeNode _operand;
 
-            SetParent(operrand, this);
-            
+        public ICodeNode Operand
+        {
+            get
+            {
+                return _operand;
+            }
+            set
+            {
+                _operand = value;
+                SetParent(_operand, this);
+                Update();
+            }
+        }
+
+        public ReurnNode(ICodeNode operand)
+        {
+            _operand = operand;
+
+            SetParent(operand, this);
             Update();
+
         }
 
         protected override void Update()
         {
             var oplist = new List<Operation>();
-            oplist.AddRange(((ICodeNode)Children[0]).OperationsСache);
+            oplist.AddRange(Operand.OperationsСache);
 
             oplist.Add(new Operation(OpCodes.Ret));
 
             OperationsСache = oplist;
 
             UpdateParentOf(this);
+        }
+
+        public INode GetChild(int childId)
+        {
+            if (childId==0)
+                return Operand;
+            else
+                throw new IndexOutOfRangeException();
         }
 
         public List<Operation> OperationsСache { get; private set; }

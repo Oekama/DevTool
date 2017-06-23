@@ -1,18 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AST.Nodes.AbstractNodes;
 using AST.Operations;
 
 namespace AST.Nodes.CodeNodes
 {
-    public sealed class CodeBlockNode : AdultNode, ICodeNode
+    public sealed class CodeBlockNode : BaseNode,  ICodeNode, IAdultNode
     {
+        private ICodeNode[] _children;
+
         public CodeBlockNode(ICodeNode[] lines)
         {
-            Children =  (BaseNode[]) lines.Select(line => (BaseNode)line);
+            _children =  lines;
 
             foreach (var line in lines)
-                SetParent((BaseNode) line, this);
+                SetParent(line, this);
             
             Update();
             
@@ -22,14 +25,27 @@ namespace AST.Nodes.CodeNodes
         {
             var oplist = new List<Operation>();
 
-            foreach (var line in Children)
-                oplist.AddRange(((ICodeNode) line).OperationsСache);
+            foreach (var line in _children)
+                oplist.AddRange(line.OperationsСache);
 
             OperationsСache = oplist;
             
             UpdateParentOf(this);
 
         }
+
+        public INode GetChild(int childId)
+        {
+            return _children[childId];
+        }
+
+        public void SetChild(int childId, ICodeNode child)
+        {
+            _children[childId] = child;
+            SetParent(child, this);
+            Update();
+        }
+
 
         public List<Operation> OperationsСache { get; private set; }
     }
